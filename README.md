@@ -130,7 +130,7 @@
 - 第1回 (2023/10/05). [第1回授業板書](https://masataka123.github.io/2023_winter_linearalgebra/material/1_授業板書.pdf)
 - 第2回 (2023/10/12).  [第2回授業板書](https://masataka123.github.io/2023_winter_linearalgebra/material/2_授業板書.pdf)
 - 第3回 (2023/10/19).  [第3回授業板書](https://masataka123.github.io/2023_winter_linearalgebra/material/3_授業板書.pdf)
-- 第4回 (2023/10/26).  
+- 第4回 (2023/10/26).  [第4回授業板書](https://masataka123.github.io/2023_winter_linearalgebra/material/4_授業板書.pdf)
 - 第5回 (2023/11/09).  
 - 第6回 (2023/11/16).  演習
 - (2023/11/28) または (2023/11/30). どちらか一方を休講にする予定.  
