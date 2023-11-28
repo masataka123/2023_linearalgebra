@@ -134,7 +134,7 @@
 - 第4回 (2023/10/26).  [第4回授業板書](https://masataka123.github.io/2023_winter_linearalgebra/material/4_授業板書.pdf)
 - 第5回 (2023/11/09).  [第5回授業板書](https://masataka123.github.io/2023_winter_linearalgebra/material/5_授業板書.pdf)
 - 第6回 (2023/11/16).   [演習問題](https://masataka123.github.io/2023_winter_linearalgebra/material/0_演習問題1_20231116.pdf) [演習問題解答](https://masataka123.github.io/2023_winter_linearalgebra/material/0_演習問題1_20231116解答.pdf)
-- 第7回 (2023/11/28)
+- 第7回 (2023/11/28) [第7回授業板書](https://masataka123.github.io/2023_winter_linearalgebra/material/6_授業板書.pdf)
 - (2023/11/30). 休講.
 - 第8回 (2023/12/07).  
 - 第9回 (2023/12/14).  
