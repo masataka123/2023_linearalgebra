@@ -139,7 +139,7 @@
 - (2023/11/30). 休講.
 - 第8回 (2023/12/07).  [第8回授業板書](https://masataka123.github.io/2023_winter_linearalgebra/material/8_授業板書.pdf)
 - 第9回 (2023/12/14).  [第9回授業板書](https://masataka123.github.io/2023_winter_linearalgebra/material/9_授業板書.pdf)
-- 第10回 (2023/12/21).  
+- 第10回 (2023/12/21). [第10回授業板書](https://masataka123.github.io/2023_winter_linearalgebra/material/10_授業板書.pdf)
 -  (2024/01/04).  休講 
 - 第11回 (2024/01/11).  演習
 -  (2024/01/18).  休講 
