@@ -1,0 +1,401 @@
+\documentclass[dvipdfmx,a4paper,11pt]{article}
+\usepackage[utf8]{inputenc}
+%\usepackage[dvipdfmx]{hyperref} %リンクを有効にする
+\usepackage{url} %同上
+\usepackage{amsmath,amssymb} %もちろん
+\usepackage{amsfonts,amsthm,mathtools} %もちろん
+\usepackage{braket,physics} %あると便利なやつ
+\usepackage{bm} %ラプラシアンで使った
+\usepackage[top=15truemm,bottom=25truemm,left=25truemm,right=25truemm]{geometry} %余白設定
+\usepackage{latexsym} %ごくたまに必要になる
+\renewcommand{\kanjifamilydefault}{\gtdefault}
+\usepackage{otf} %宗教上の理由でmin10が嫌いなので
+\usepackage{showkeys}\renewcommand*{\showkeyslabelformat}[1]{\fbox{\parbox{2cm}{ \normalfont\tiny\sffamily#1\vspace{6mm}}}}
+\usepackage[driverfallback=dvipdfm]{hyperref}
+
+
+\usepackage[all]{xy}
+\usepackage{amsthm,amsmath,amssymb,comment}
+\usepackage{amsmath}    % \UTF{00E6}\UTF{0095}°\UTF{00E5}\UTF{00AD}\UTF{00A6}\UTF{00E7}\UTF{0094}¨
+\usepackage{amssymb}  
+\usepackage{color}
+\usepackage{amscd}
+\usepackage{amsthm}  
+\usepackage{wrapfig}
+\usepackage{comment}	
+\usepackage{graphicx}
+\usepackage{setspace}
+\usepackage{pxrubrica}
+\usepackage{enumitem}
+\usepackage{mathrsfs} 
+
+\setstretch{1.2}
+
+
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\Q}{\mathbb{Q}} 
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\C}{\mathbb{C}} 
+\newcommand{\Sin}{\text{Sin}^{-1}} 
+\newcommand{\Cos}{\text{Cos}^{-1}} 
+\newcommand{\Tan}{\text{Tan}^{-1}} 
+\newcommand{\invsin}{\text{Sin}^{-1}} 
+\newcommand{\invcos}{\text{Cos}^{-1}} 
+\newcommand{\invtan}{\text{Tan}^{-1}} 
+\newcommand{\Area}{\text{Area}}
+\newcommand{\vol}{\text{Vol}}
+\newcommand{\maru}[1]{\raise0.2ex\hbox{\textcircled{\tiny{#1}}}}
+\newcommand{\sgn}{{\rm sgn}}
+%\newcommand{\rank}{{\rm rank}}
+
+
+
+   %当然のようにやる．
+\allowdisplaybreaks[4]
+   %もちろん．
+%\title{第1回. 多変数の連続写像 (岩井雅崇, 2020/10/06)}
+%\author{岩井雅崇}
+%\date{2020/10/06}
+%ここまで今回の記事関係ない
+\usepackage{tcolorbox}
+\tcbuselibrary{breakable, skins, theorems}
+
+\theoremstyle{definition}
+\newtheorem{thm}{定理}
+\newtheorem{lem}[thm]{補題}
+\newtheorem{prop}[thm]{命題}
+\newtheorem{cor}[thm]{系}
+\newtheorem{claim}[thm]{主張}
+\newtheorem{dfn}[thm]{定義}
+\newtheorem{rem}[thm]{注意}
+\newtheorem{exa}[thm]{例}
+\newtheorem{conj}[thm]{予想}
+\newtheorem{prob}[thm]{問題}
+\newtheorem{rema}[thm]{補足}
+
+\DeclareMathOperator{\Ric}{Ric}
+\DeclareMathOperator{\Vol}{Vol}
+ \newcommand{\pdrv}[2]{\frac{\partial #1}{\partial #2}}
+ \newcommand{\drv}[2]{\frac{d #1}{d#2}}
+  \newcommand{\ppdrv}[3]{\frac{\partial #1}{\partial #2 \partial #3}}
+
+
+%ここから本文．
+\begin{document}
+\pagestyle{empty}
+
+
+
+\begin{center}
+{\LARGE 期末試験} \\
+
+{2023年度秋冬学期 大阪大学 全学共通教育科目 線形代数学入門 (経(161〜))}
+\end{center}
+
+\begin{flushright}
+ 岩井雅崇(いわいまさたか) 2024/01/25
+\end{flushright}
+
+
+%\vspace{2pt}
+%\begin{flushleft}
+%{ \large \underline{学籍番号: \hspace{4cm} 名前  \hspace{8cm} } }
+%\end{flushleft}
+
+%\begin{center}
+ %{\large 下の問題を解け. なお解答は配布した解答用紙に解答すること. }
+ %{\large 各問題の下に答えを書きこの用紙を提出してください. 問題は両面あります.}
+  %\end{center}
+  
+  \begin{center}
+下の問題を解け.  ただし解答に関しては答えのみならず, 答えを導出する過程をきちんと記すこと. 
+  \end{center}
+  
+   \vspace{11pt}
+{\Large 第1問.} 
+\vspace{11pt}
+$\begin{pmatrix}  2& 3  \\  1 &4  \end{pmatrix}
+\begin{pmatrix}  -1& 2  \\  0 &-3  \end{pmatrix}
++ 
+2\begin{pmatrix}  1& 1  \\  2 &0 \end{pmatrix}
+\begin{pmatrix}  3& 2  \\  1&-1  \end{pmatrix}
+$
+ を求めよ. 
+  
+  
+ \vspace{11pt}
+{\Large 第2問.} 
+\vspace{11pt}
+$A=\begin{pmatrix}  4&  0 \\  2 &1  \end{pmatrix}
+$とする. $A$を対角化せよ. また$A^n$を$n$を用いて表せ. 
+  
+ 
+  \vspace{11pt}
+{\Large 第3問.} 
+%\vspace{11pt}
+行列
+ % (1).
+%$
+% \begin{pmatrix}
+%1 &2&1 \\
+%2 & 1& 3\\
+%1&5 &0
+% \end{pmatrix}
+% $
+% (1).
+$ \begin{pmatrix}
+ 1& 2& 3  & 4&5\\
+ 2& 3& 4  & 5&6\\
+ 3& 4& 5 & 6&7\\
+ 4& 5& 6 & 7&8\\
+ %5& 6& 7 & 8&9\\
+\end{pmatrix}
+ $
+を簡約化し, その階数を求めよ.
+
+ 
+  \vspace{11pt}
+{\Large 第4問.} 
+\vspace{11pt}
+
+行基本変形と行列の簡約化を用いて, 次の連立1次方程式の解を求めよ.
+ $$
+ \left\{ 
+\begin{matrix}
+   &  & x_2 &  -& x_3&+ &x_4&= & -4\\
+x_1&+&2x_2& +&x_3&+&x_4&= & -1\\
+2x_1&+ &x_2& + &5x_3&+&6x_4&=&3 \\
+ x_1&+ &x_2& + &2x_3&+&2x_4&=&1 \\
+\end{matrix}
+\right.
+ $$
+ %$
+% \left\{ 
+%\begin{matrix}
+%x_1& &         &  +& 2x_3&- &x_4&+ & 2x_5&= 3 \\
+%2x_1&+&x_2& + &3x_3&-&x_4&-&x_5&= -1 \\
+%-x_1&+&3x_2& - &5x_3&+&4x_4&+&x_5&= -6 \\
+%\end{matrix}
+%\right.
+% $
+ 
+   \vspace{11pt}
+{\Large 第5問.} 
+\vspace{11pt}
+
+連立1次方程式
+ $
+ \left\{ 
+\begin{matrix}
+x_1& +& 4x_2 &  +& 2x_3&- &2x_4&= & 5\\
+4x_1&+&13x_2& +&5x_3&+&x_4&= & 2\\
+	& &x_2& + &x_3&-&3x_4&=&a \\
+\end{matrix}
+\right.
+ $
+ の解が存在するような$a$の値を全て求めよ.
+\begin{flushright}
+\LARGE{第6問に続く}
+\end{flushright}
+
+\newpage 
+
+ \vspace{11pt}
+{\Large 第6問}  
+ 
+ 次の問題に答えよ. ただし解答に際し授業・教科書で証明を与えた定理に関しては自由に用いて良い. 
+   %以下の(1)-(5)の各主張について, 正しい場合には証明を与え, 誤っている場合には反例をあげよ.  
+   
+   
+% またこの問題において, $m,n$を正の整数, $E_m$を$m$次の単位行列, $O_{n,m}$を$n\times m$型の零行列とする.
+ \begin{enumerate}
+\renewcommand{\labelenumi}{(\arabic{enumi}).}
+ \setlength{\parskip}{0cm} % 段落間
+  \setlength{\itemsep}{0cm}
+   % \item $2\times 2$行列$A, B, C$で$ABC\neq CBA$となる例を一つあげよ. 
+    \item $2\times 2$行列$A, B$について, $AB$は零行列であるが, $A$も$B$も零行列でない行列$A,B$の例を一つあげよ. 
+   % \item $2\times 2$行列$A$について, $A^2=\begin{pmatrix}  1&  0 \\  0 &1 \end{pmatrix}$だが$A$は対角行列でない行列$A$の例を一つあげよ. 
+ \item $2\times 2$行列$A, B$について, $AB=\begin{pmatrix}  1&  0 \\  0 &1  \end{pmatrix}$ならば, $AB=BA$であることを示せ.
+ \item $2\times 2$行列$A, B, C$について, $\det(ABC) = \det(BAC)$であることを示せ.
+   \item $2\times 2$行列$A, B$について, $AB$が正則行列ならば, $A$も$B$も正則行列であることを示せ.
+ \end{enumerate} 
+ %     \item $2\times 2$行列$A, B$で$AB\neq BA$となる例を一つあげよ. 
+  % \item $2\times 2$行列$A$について, $A^2=\begin{pmatrix}  1&  0 \\  0 &1 \end{pmatrix}$だが$A$は対角行列でない行列$A$の例を一つあげよ. 
+    % \item $2\times 2$行列$A, B$について, $AB=\begin{pmatrix}  0&  0 \\  0 &0  \end{pmatrix}$であるが, $A$$B \neq \begin{pmatrix}  0&  0 \\  0 &0  \end{pmatrix}$である.
+          %\item $2\times 2$行列$A$で. $A$の各成分は実数であるが, $A$の全ての固有値が実数ではない複素数になるものの例をあげよ. 
+          %     \item $2\times 2$行列$A$で. $A$の各成分は実数であるが, $A$の全ての固有値が実数ではない複素数になるものの例をあげよ. 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{comment}
+
+
+
+
+{\Large 第問}  
+ \vspace{11pt}
+ 
+   以下の(1)-(5)の各主張について, 正しい場合には証明を与え, 誤っている場合には反例をあげよ.  
+   
+   
+% またこの問題において, $m,n$を正の整数, $E_m$を$m$次の単位行列, $O_{n,m}$を$n\times m$型の零行列とする.
+ \begin{enumerate}
+\renewcommand{\labelenumi}{(\arabic{enumi}).}
+ \setlength{\parskip}{0cm} % 段落間
+  \setlength{\itemsep}{0cm}
+     \item 行列$A, B$について,$A$と$B$がともに$2\times 2$行列ならば$AB=BA$である. 
+ \item $2\times 2$行列$A, B$について, $AB=\begin{pmatrix}  1&  0 \\  0 &1  \end{pmatrix}$ならば, $BA = \begin{pmatrix}  1&  0 \\  0 &1  \end{pmatrix}$である.
+ \item $2\times 2$行列$A, B$について, $AB=\begin{pmatrix}  0&  0 \\  0 &0  \end{pmatrix}$ならば, $B = \begin{pmatrix}  0&  0 \\  0 &0  \end{pmatrix}$である.
+ \item $2\times 2$行列$A, B, C$について, $\det(ABC) = \det(BAC)$である.
+ %\item $n$次正方行列$A$と$n\times m$行列$B$について, $A$が正則行列かつ$AB=O_{n,m}$ならば, $B=O_{n,m}$である.
+%  \item $n$次正方行列$A, B$について, $AB=O_{n,n}$ならば, $B=O_{n,n}$である.
+  %\item $n$次正方行列$A, B$について, $AB=E_n$ならば, $AB=BA$である.
+   \item $2\times 2$行列$A, B$について, $AB$が正則行列ならば, $A$も$B$も正則行列である.
+ %\item 「$n$次正方行列$A, B$について, $A$も$B$も正則行列であるならば, $AB$も正則行列である.」
+% \item $n$次正方行列$A, B, C$について, $\det(ABC) = \det(BAC)$である.
+ %\item 全ての成分が整数である$n$次正則行列$A$について, $\det(A) =\pm1$ならば, 逆行列$A^{-1}$の全ての成分は整数である.
+ %\item 全ての成分が整数である$n$次正則行列$A$について, 逆行列$A^{-1}$の全ての成分が整数であるならば, $\det(A) =\pm1$である.
+
+ \end{enumerate} 
+ 
+ ただし次の点に注意すること. 
+ \begin{enumerate}
+ \renewcommand{\labelenumi}{注意\arabic{enumi}.}
+ \setlength{\parskip}{0cm} % 段落間
+  \setlength{\itemsep}{0cm}
+ \item 授業・教科書で証明を与えた定理に関しては自由に用いて良い. 
+ \item 反例とは「ある主張"AならばBである"について, それが成立しない例(つまりAを満たすがBを満たさない例)」のことである. 
+例えば「任意の実数$x$について, $x \geqq 0$ならば, $x+1=2$である」という主張は誤りである. その反例として$x=5$が挙げられる. なぜなら$x=5 \geqq0$ではあるが, $x+1 = 5 + 1 =6 \neq 2$であるためである. また$x=1$はこの主張の反例にはならない.
+\item 解答に関しては次の解答例を参考にせよ.
+   
+   \medskip
+   (問題例1) $2x =4$ならば$x=2$である.
+   
+   (解答例1) 正しい. $2x=4$ならば両辺に$\frac{1}{2}$をかけることで
+   $x =\frac{1}{2} \cdot 2x = \frac{1}{2}\cdot 4 = 2$となるからである.
+   
+   \medskip
+    (問題例2) $x^2 =4$ならば$x=2$である.
+   
+   (解答例2) 間違いである. 反例として$x=-2$が挙げられる. $x=-2$とすると$x^2=(-2)^2=4$であるが$x=-2 \neq 2$であるからである.    
+ 
+  \end{enumerate} 
+  
+  \end{comment}
+ %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+  
+   %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+  \begin{comment}
+
+
+  \newpage
+
+{\Large 第問}  
+この問題は行列の対角化の応用を見る問題である. 
+
+フィボナッチ数列$\{a_{n} \}$を
+$$
+a_{n+2}=a_{n+1} + a_{n} \quad a_1=a_2=1
+$$
+とする. 
+また行列$A$と実数$\alpha, \beta$を次のように定める.
+$$
+A = \begin{pmatrix}  1& 1  \\  1 &0  \end{pmatrix}
+\quad
+\alpha = \frac{1 +\sqrt{5}}{2}
+\quad
+\beta = \frac{1 -\sqrt{5}}{2}
+$$
+ 次の問題に答えよ. 
+ \begin{enumerate}
+\renewcommand{\labelenumi}{(\arabic{enumi}).}
+ \setlength{\parskip}{0cm} % 段落間
+  \setlength{\itemsep}{0cm}
+  	\item $a_5$を求めよ.
+     \item 1以上の自然数$n$について
+     $
+     \begin{pmatrix}  a_{n+2} \\   a_{n+1} \end{pmatrix}
+     = A
+     \begin{pmatrix}  a_{n+1} \\   a_{n} \end{pmatrix}
+     $
+     であることを示せ.
+     \item 2以上の自然数$n$について
+     $
+     \begin{pmatrix}  a_{n} \\   a_{n-1} \end{pmatrix}
+     = A^{n-2}
+     \begin{pmatrix}  1 \\   1 \end{pmatrix}
+     $
+     であることを示せ.
+     \item $\alpha, \beta$は$A$の固有値であることをしめせ.
+     \item 固有値$\alpha,\beta$に関する固有ベクトルをそれぞれ求めよ.
+     \item $A^{n}$を求めよ.
+     \item (3)と(6)を用いてフィボナッチ数列の一般項$a_{n}$を$\alpha, \beta, n$を用いて表せ. 
+ \end{enumerate} 
+   \end{comment}
+  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+  
+ \vspace{11pt}
+  {\Large おまけ問題}  
+  
+
+各成分が実数である$5\times 5$行列に関して次の操作を考える. 
+ % \vspace{5pt}
+\begin{tcolorbox}[
+    colback = white,
+    colframe = black,
+    fonttitle = \bfseries,
+    breakable = true]
+(操作): 好きな行, または好きな列を一つ選び, その行(または列)の成分の符号を一斉に入れ替える.
+ \end{tcolorbox}
+%\vspace{5pt}
+%この行列に関して次の操作を考える. 好きな行, または好きな列にある全ての符号を一斉に入れ替える.
+いかなる$5\times 5$行列についても, 上の操作をうまく繰り返せば, どの行の和, 列の和も負でないようにできることを示せ.
+
+\medskip
+[補足] 問題文だけだと難しいと思うので例を挙げる. 
+例えば
+$$
+ \begin{pmatrix}
+1 & -2 & -3& 1 & 1\\
+1 & 3 & 2& 4 & 1\\
+2 & 4 & 3 & -1& 1\\
+-2 & 2 & 2& 2 & 1\\
+0& 2 & 1 & 1 & 1\\
+ \end{pmatrix}
+ $$
+ の場合, 1行目の和は$1-2-3+1+1=-2$で負になっている.
+ そこで1行目に操作を行うと
+ $$
+  \begin{pmatrix}
+1 & -2 & -3& 1 & 1\\
+1 & 3 & 2& 4 & 1\\
+2 & 4 & 3 & -1& 1\\
+-2 & 2 & 2& 2 & 1\\
+0& 2 & 1 & 1 & 1\\
+ \end{pmatrix}
+  %\begin{pmatrix}
+%1 & \colorbox[rgb]{0.8, 1.0, 0.8}{0} & 1\\
+%\colorbox[rgb]{0.8, 1.0, 0.8}{1} & \colorbox[rgb]{0.8, 1.0, 0.8}{1} & \colorbox[rgb]{0.8, 1.0, 0.8}{1}\\
+%0 & \colorbox[rgb]{0.8, 1.0, 0.8}{0} & 0 \\
+% \end{pmatrix}
+ \rightarrow 
+  \begin{pmatrix}
+-1 & 2 & 3& -1 & -1\\
+1 & 3 & 2& 4 & 1\\
+2 & 4 & 3 & -1& 1\\
+-2 & 2 & 2& 2 & 1\\
+0& 2 & 1 & 1 & 1\\
+ \end{pmatrix}
+ $$
+となり無事にどの行の和, 列の和も負でないようにできる. 
+実際1行目の和は2, 2行目の和は11, 3行目の和は9, 4行目の和は5, 5行目の和は5であり,   
+1列目の和は0, 2列目の和は13, 3列目の和は11, 4列目の和は5, 5列目の和は3となっている. 
+
+この例では1回の操作でどの行の和, 列の和も負でないようにできたが, 一般にはうまくいかない.
+果たしてどのように操作を繰り返し行えば良いだろうか. その方法を理由とともに書いてほしい. 
+
+\begin{flushright}
+\LARGE{問題は以上である. }
+\end{flushright}
+ \end{document}
+ 
